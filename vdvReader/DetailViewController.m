@@ -108,6 +108,8 @@
     
     _webView.delegate = self;
     
+    NSLog(@"Load sub");
+
     [self configureView];
 }
 

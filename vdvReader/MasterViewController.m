@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
@@ -41,9 +42,9 @@
     _feedParser = [[MWFeedParser alloc] initWithFeedURL:feedURL];
     _feedParser.delegate = self;
     _feedParser.feedParseType = ParseTypeFull;
-    _feedParser.connectionType = ConnectionTypeAsynchronously;
+    _feedParser.connectionType = ConnectionTypeSynchronously;
     [_feedParser parse];
-    
+    [self performSegueWithIdentifier:@"showDetail" sender:0];    
 }
 
 - (void)refresh {

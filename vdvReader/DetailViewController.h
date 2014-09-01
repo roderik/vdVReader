@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWFeedItem.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UIWebViewDelegate>
 
-@property (strong, nonatomic) id detailItem;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (strong, nonatomic) MWFeedItem *detailItem;
+@property (strong, nonatomic) IBOutlet UINavigationItem *detailTitle;
+
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+
 
 @end
 

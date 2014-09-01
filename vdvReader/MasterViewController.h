@@ -7,13 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWFeedParser.h"
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UITableViewController <MWFeedParserDelegate>
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
+// Parsing
+@property (nonatomic, strong) MWFeedParser *feedParser;
+@property (nonatomic, strong) NSMutableArray *parsedItems;
 
+// Displaying
+@property (nonatomic, strong) NSArray *itemsToDisplay;
+@property (nonatomic, strong) NSDateFormatter *formatter;
 
 @end
 
